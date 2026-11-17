@@ -1,0 +1,62 @@
+[
+  {
+    "framework": "SparkML (JVM)",
+    "scale": "1x (768 filas)",
+    "load_sec": 13.518,
+    "train_sec": 8.992,
+    "total_sec": 22.51,
+    "peak_py_ram_mb": "N/A (JVM Heap)",
+    "RMSE_sec": 1105.16,
+    "R2": 0.6287
+  },
+  {
+    "framework": "Dask (Python)",
+    "scale": "1x (768 filas)",
+    "load_sec": 0.583,
+    "train_sec": 2.499,
+    "total_sec": 3.083,
+    "peak_py_ram_mb": 14.39,
+    "RMSE_sec": 1018.16,
+    "R2": 0.6848
+  },
+  {
+    "framework": "Ray (Python)",
+    "scale": "1x (768 filas)",
+    "load_sec": 0.039,
+    "train_sec": 12.842,
+    "total_sec": 12.88,
+    "peak_py_ram_mb": 16.85,
+    "RMSE_sec": 1018.16,
+    "R2": 0.6848
+  },
+  {
+    "framework": "SparkML (JVM)",
+    "scale": "100x (76,800 filas)",
+    "load_sec": 1.703,
+    "train_sec": 52.713,
+    "total_sec": 54.415,
+    "peak_py_ram_mb": "N/A (JVM Heap)",
+    "RMSE_sec": 1046.24,
+    "R2": 0.6672
+  },
+  {
+    "framework": "Dask (Python)",
+    "scale": "100x (76,800 filas)",
+    "load_sec": 0.28,
+    "train_sec": 20.905,
+    "total_sec": 21.186,
+    "peak_py_ram_mb": 840.29,
+    "RMSE_sec": 1027.23,
+    "R2": 0.6792
+  },
+  {
+    "framework": "Ray (Python)",
+    "scale": "100x (76,800 filas)",
+    "load_sec": 0.311,
+    "train_sec": 37.6,
+    "total_sec": 37.911,
+    "peak_py_ram_mb": 839.76,
+    "RMSE_sec": 1027.23,
+    "R2": 0.6792
+  }
+]

@@ -1,0 +1,9 @@
+proyecto_renfe/
+├── data/
+│   ├── raw_cercanias_positions/   # Ubicación Cercanías (+ parsing de andén/platform)
+│   ├── raw_ld_positions/          # Ubicación Larga Distancia / AVE / Media Distancia
+│   ├── raw_cercanias_updates/     # Horarios y retrados de Cercanías
+│   ├── raw_ld_updates/            # Horarios y retrasos de LD / MD
+│   └── raw_alerts/                # Incidencias y avisos en la red
+├── recolector_multi_feed.py       # Script principal de captura continua
+└── eda_iteracion_1.ipynb          # Notebook de validación del dataset inicial

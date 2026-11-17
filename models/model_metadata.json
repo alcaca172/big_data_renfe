@@ -1,0 +1,55 @@
+{
+  "severity_classes": {
+    "0": "Puntual / Leve (<= 3 min)",
+    "1": "Retraso Moderado (3 - 10 min)",
+    "2": "Incidencia / Retraso Grave (> 10 min)"
+  },
+  "best_regressor": "RandomForestRegressor",
+  "regression_metrics": {
+    "RandomForestRegressor": {
+      "RMSE_sec": 773.8,
+      "MAE_sec": 507.61,
+      "R2": 0.7985
+    },
+    "GBTRegressor": {
+      "RMSE_sec": 1029.45,
+      "MAE_sec": 527.47,
+      "R2": 0.6433
+    }
+  },
+  "best_classifier": "RandomForestClassifier",
+  "classification_metrics": {
+    "RandomForestClassifier": {
+      "F1_weighted": 0.7166,
+      "Accuracy": 0.7236
+    },
+    "LogisticRegression": {
+      "F1_weighted": 0.7014,
+      "Accuracy": 0.7073
+    }
+  },
+  "tuned_best_regressor": "RandomForestRegressor_Tuned",
+  "tuned_regression_metrics": {
+    "RandomForestRegressor_Tuned": {
+      "RMSE_sec": 599.18,
+      "MAE_sec": 388.71,
+      "R2": 0.8958
+    },
+    "GBTRegressor_Tuned": {
+      "RMSE_sec": 869.8,
+      "MAE_sec": 490.86,
+      "R2": 0.7805
+    }
+  },
+  "tuned_best_classifier": "RandomForestClassifier_Tuned",
+  "tuned_classification_metrics": {
+    "RandomForestClassifier_Tuned": {
+      "F1_weighted": 0.7773,
+      "Accuracy": 0.7744
+    },
+    "LogisticRegression_Tuned": {
+      "F1_weighted": 0.706,
+      "Accuracy": 0.6951
+    }
+  }
+}
