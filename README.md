@@ -20,7 +20,7 @@ El proyecto integra telemetría en tiempo real en formato **GTFS-RT v2.0**, plan
          │                         │                              │
          └────────────┬────────────┘                              │
                       ▼                                           │
-         1. build_dataset_hito2.py                                │
+         1. hito2_build_dataset.py                                │
             • Aplanado JSON (explode)                             │
             • Desduplicación por ventana                          │
             • Distancia Haversine GPS                             │
@@ -31,7 +31,7 @@ El proyecto integra telemetría en tiempo real en formato **GTFS-RT v2.0**, plan
                       │                                           │
                       └─────────────────────┬─────────────────────┘
                                             ▼
-                               2. enrich_aemet_hito2.py
+                               2. hito2_enrich_aemet.py
                                   • Conversión DMS -> Decimal
                                   • Estación AEMET más cercana
                                             │
@@ -73,8 +73,8 @@ proyecto_renfe/
 │   ├── delay_regressor_tuned_pipeline/    # Artefacto de regresión afinado
 │   ├── severity_classifier_tuned_pipeline/# Artefacto de clasificación afinado
 │   └── model_metadata.json                # Registro de métricas y clases
-├── build_dataset_hito2.py         # ETL batch: unión GTFS-RT + GTFS estático
-├── enrich_aemet_hito2.py          # Enriquecimiento geoespacial con AEMET OpenData
+├── hito2_build_dataset.py         # ETL batch: unión GTFS-RT + GTFS estático
+├── hito2_enrich_aemet.py          # Enriquecimiento geoespacial con AEMET OpenData
 ├── hito2_train_sparkml.py         # Entrenamiento y evaluación Baseline en SparkML
 ├── hito2_train_sparkml_tuned.py   # Iteración v2: ingeniería de dominio, pesos y CV
 └── README.md
