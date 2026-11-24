@@ -18,6 +18,7 @@ El repositorio implementa un pipeline híbrido **Batch + Streaming** sobre **Apa
    - `hito3_live_producer.py`: Consulta cada **20 segundos** el feed público `https://gtfsrt.renfe.com/trip_updates.json`, filtra capturas duplicadas por `header.timestamp` y escribe cada JSON de forma atómica en `data/stream_in/trip_updates/`.
    - `hito3_stream_simulator.py`: Productor determinista offline que inyecta capturas históricas en `data/stream_in/trip_updates/` cada 6 segundos para demostraciones y pruebas sin conexión.
    - `hito3_streaming_inference.py`: Motor **Spark Structured Streaming** (`foreachBatch`, trigger de 5 s) que aplana mensajes GTFS-RT entrantes, mantiene estado móvil en memoria de los últimos 30 minutos por corredor, ejecuta inferencia encadenada con ambos `PipelineModel` de `models/` y persiste predicciones en Parquet (`data/stream_out/predictions/`).
+   - `hito3_dashboard.py`: Consumidor de solo lectura de `data/stream_out/predictions/*.parquet`.
 
 3. **Calidad y CI/CD (Hito 3):**
    - `tests/test_pipeline.py`: Suite unitaria con `pytest` ejecutada sobre una sesión local de PySpark (`local[1]`).

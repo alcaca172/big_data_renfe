@@ -108,6 +108,7 @@ big_data_renfe/
 ├── hito3_streaming_inference.py             # Motor de inferencia Spark Structured Streaming
 ├── hito3_live_producer.py                   # Productor en vivo contra API Renfe (cada 20 s)
 ├── hito3_stream_simulator.py                # Simulador offline de flujo GTFS-RT
+├── hito3_dashboard.py                       # Cuadro de mando operacional en vivo (Streamlit)
 ├── requirements.txt                         # Dependencias Python del proyecto
 ├── AGENTS.md                                # Contratos técnicos y guardrails del sistema
 └── README.md                                # Documentación general
@@ -183,6 +184,10 @@ Abrir dos terminales en la raíz del proyecto:
   python -u hito3_live_producer.py
   ```
   *(Alternativa sin conexión utilizando capturas históricas cada 6 s: `python -u hito3_stream_simulator.py`)*.
+- **Terminal 3 — Cuadro de mando operacional en vivo:**
+  ```poweshell
+  streamlit run hito3_dashboard.py
+  ```
 
 ### 4. Ejecución de Pruebas Unitarias
 ```bash
