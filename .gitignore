@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 tempCodeRunnerFile.py
 data/processed/gtfs/stop_times.txt
+data/stream_in/
+data/stream_out/
+.pytest_cache/

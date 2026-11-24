@@ -1,0 +1,38 @@
+name: CI - Renfe Big Data Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  unit-tests:
+    name: PySpark Unit Tests (pytest)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 17 (requerido por Apache Spark)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias de ejecución y testing
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyspark pandas pyarrow pytest
+
+      - name: Ejecutar suite de pruebas unitarias
+        env:
+          PYTHONPATH: .
+        run: pytest -v
